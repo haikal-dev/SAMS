@@ -11,6 +11,6 @@ class HomeController extends Controller
      * to login
      */
     public function index(){
-        //
+        return view('home');
     }
 }
