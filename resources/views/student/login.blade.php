@@ -54,6 +54,12 @@
                                     </div>
                                     <!-- Change this to a button or input when using this as a form -->
                                     <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>
+                                    <div style="margin-top: 20px; text-align:center;">
+                                        <a href="{{env('APP_URL')}}">&larr; Back to Home</a>
+                                    </div>
+                                    <div style="margin-top: 20px; text-align:center;">
+                                        <a href="{{env('APP_URL')}}/student/register">Don't have account? Please register.</a>
+                                    </div>
                                 </fieldset>
                             </form>
                         </div>
