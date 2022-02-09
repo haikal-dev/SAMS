@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Startmin - Bootstrap Admin Theme</title>
+        <title>SAMS for Lecturer - Login</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="{{env('APP_URL')}}/assets/startmin/css/bootstrap.min.css" rel="stylesheet">
