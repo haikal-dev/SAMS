@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class LecturerController extends Controller
 {
     public function index(){
-        return "ok";
+        return view('lecturer.login');
     }
 }
