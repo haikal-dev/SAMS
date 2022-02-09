@@ -1,6 +1,3 @@
 # SAMS
 
-## Things to do
-
-* make a login page for lecturer/student/admin
-* make a default home - for ease lecturer/student where to login 
+This source code is under development. No release yet.
