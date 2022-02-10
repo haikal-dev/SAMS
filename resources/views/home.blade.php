@@ -44,6 +44,14 @@
         </a>
         </div>
     </div>
+    <div class="row">
+      <div class="col-md-12" align="center" style="margin-top:50px;">
+        {{env('APP_VERSION')}}<br/>
+        <br/>
+        &copy; {{gmdate('Y', time() + (3600*8))}} <a href="https://node.my">Node Developer</a>.<br/>
+        All Rights Reserved.
+      </div>
+    </div>
 </div>
 
 </body>
