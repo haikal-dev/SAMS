@@ -19,7 +19,7 @@ class AdminController extends Controller
             return view('admin.login', compact('statusLoggedOut'));
         }
         else {
-            return "admin area";
+            return view('admin.dashboard');
         }
     }
 
