@@ -15,11 +15,18 @@ class AdminController extends Controller
 
     public function index(Request $request){
         if(!$request->session()->exists($this->sessionName)){
-            return view('admin.login');
+            $statusLoggedOut = ($request->session()->exists('status')) ? true : false;
+            return view('admin.login', compact('statusLoggedOut'));
         }
         else {
             return "admin area";
         }
+    }
+
+    public function logout(Request $request){
+        $request->session()->flush();
+        $request->session()->flash('status', 'Successfully logged out!');
+        return redirect($this->homeUrl);
     }
 
     public function login(Request $request){
@@ -27,14 +34,15 @@ class AdminController extends Controller
             return redirect($this->homeUrl);
         }
         else {
-            if(!$request->has('email', 'pwd')){
+            if(!$request->has('email', 'pass')){
                 return redirect($this->homeUrl);
             }
             else {
                 $email = $request->get('email');
-                $pwd = $request->get('pwd');
+                $pwd = $request->get('pass');
                 
                 if($this->email == $email && Hash::check($pwd, $this->pass)){
+                    $request->session()->put($this->sessionName, time());
                     return response()->json([
                         'message' => 'OK'
                     ]);

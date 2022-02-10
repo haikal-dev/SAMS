@@ -42,11 +42,12 @@
                             <div id="message" style="display:none;" align="center"></div>
                             <form id="form" role="form" onsubmit="return logIn(this);">
                                 <fieldset>
+                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
                                     <div class="form-group">
                                         <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                        <input class="form-control" placeholder="Password" name="pass" type="password" value="">
                                     </div>
                                     <!-- Change this to a button or input when using this as a form -->
                                     <input type="submit" value="Login" class="btn btn-success btn-block" />
@@ -71,6 +72,18 @@
         <script src="{{env('APP_URL')}}/assets/startmin/js/startmin.js"></script>
 
         <script>
+            @if($statusLoggedOut)
+
+            $('#message').removeClass();
+            $('#message').html('Successfully logged out!');
+            $('#message').addClass('alert alert-success');
+            $('#message').slideDown();
+            setTimeout(function(){
+                $('#message').slideUp();
+            }, 2000);
+            
+            @endif
+
             function logIn(f){
                 $('#message').removeClass();
                 $('#message').html('Logging In...');
@@ -78,22 +91,30 @@
                 $('#message').slideDown();
                 $('#form').slideUp();
 
-                // api for login process
-                // currently only show timer
-                // if success
-                // setTimeout(function(){
-                //     $('#message').html('Logged In!');
-                //     $('#message').removeClass();
-                //     $('#message').addClass('alert alert-success');
-                // }, 3000);
-
-                // if fail
-                // setTimeout(function(){
-                //     $('#message').html('Invalid authentication!');
-                //     $('#message').removeClass();
-                //     $('#message').addClass('alert alert-danger');
-                //     $('#form').slideDown();
-                // }, 3000);
+                $.ajax({
+                    type: 'post',
+                    dataType: 'json',
+                    url: '{{env("APP_URL")}}/admin',
+                    data: {
+                        email: f.email.value,
+                        pass: f.pass.value,
+                        _token: f._token.value
+                    },
+                    success: function(data){
+                        if(data.message != 'OK'){
+                            f.reset();
+                            $('#message').html(data.message);
+                            $('#message').removeClass();
+                            $('#message').addClass('alert alert-danger');
+                            $('#form').slideDown();
+                        } else {
+                            $('#message').html('Logged In!');
+                            $('#message').removeClass();
+                            $('#message').addClass('alert alert-success');
+                            window.location = "{{env('APP_URL')}}/admin";
+                        }
+                    }
+                });
 
                 return false;
             }
