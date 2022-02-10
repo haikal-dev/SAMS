@@ -10,7 +10,7 @@ class DevController extends Controller
 {
     protected $sessionName = "SAMS_ADMIN";
     protected $homeUrl = "/dev";
-    protected $email = "mhaikalazizan@gmail.com";
+    protected $email = "dev@node.my";
     protected $pass = '$2y$10$ZGhF1cZDujp61mnWIbUyEe9t8NYHJ.Lo6ZH9HaICYhyBt7.f86DfS';
 
     public function index(Request $request){

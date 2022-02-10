@@ -120,7 +120,7 @@
                             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="{{env('APP_URL')}}/dev/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            <li><a data-toggle="modal" data-target="#logout" href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                             </li>
                         </ul>
                     </li>
