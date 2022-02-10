@@ -17,7 +17,7 @@ class DevController extends Controller
             return view('dev.login', compact('statusLoggedOut'));
         }
         else {
-            return view('dev.dashboard');
+            return view('dev.dashboard', compact('config'));
         }
     }
 
