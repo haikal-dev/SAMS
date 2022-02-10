@@ -17,8 +17,8 @@ Route::get('/', 'App\Http\Controllers\HomeController@index');
 
 Route::get('/lecturer', 'App\Http\Controllers\lecturer\LecturerController@index');
 Route::get('/student', 'App\Http\Controllers\student\StudentController@index');
-Route::get('/admin', 'App\Http\Controllers\admin\AdminController@index');
+Route::get('/dev', 'App\Http\Controllers\dev\DevController@index');
 
 // admin login/logout process
-Route::post('/admin', 'App\Http\Controllers\admin\AdminController@login');
-Route::get('/admin/logout', 'App\Http\Controllers\admin\AdminController@logout');
+Route::post('/dev', 'App\Http\Controllers\dev\DevController@login');
+Route::get('/dev/logout', 'App\Http\Controllers\dev\DevController@logout');

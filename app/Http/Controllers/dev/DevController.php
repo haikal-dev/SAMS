@@ -1,25 +1,25 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\dev;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class AdminController extends Controller
+class DevController extends Controller
 {
     protected $sessionName = "SAMS_ADMIN";
-    protected $homeUrl = "/admin";
+    protected $homeUrl = "/dev";
     protected $email = "mhaikalazizan@gmail.com";
     protected $pass = '$2y$10$ZGhF1cZDujp61mnWIbUyEe9t8NYHJ.Lo6ZH9HaICYhyBt7.f86DfS';
 
     public function index(Request $request){
         if(!$request->session()->exists($this->sessionName)){
             $statusLoggedOut = ($request->session()->exists('status')) ? true : false;
-            return view('admin.login', compact('statusLoggedOut'));
+            return view('dev.login', compact('statusLoggedOut'));
         }
         else {
-            return view('admin.dashboard');
+            return view('dev.dashboard');
         }
     }
 

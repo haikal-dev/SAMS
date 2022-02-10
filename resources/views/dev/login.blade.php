@@ -94,7 +94,7 @@
                 $.ajax({
                     type: 'post',
                     dataType: 'json',
-                    url: '{{env("APP_URL")}}/admin',
+                    url: '{{env("APP_URL")}}/dev',
                     data: {
                         email: f.email.value,
                         pass: f.pass.value,
@@ -111,7 +111,7 @@
                             $('#message').html('Logged In!');
                             $('#message').removeClass();
                             $('#message').addClass('alert alert-success');
-                            window.location = "{{env('APP_URL')}}/admin";
+                            window.location = "{{env('APP_URL')}}/dev";
                         }
                     }
                 });

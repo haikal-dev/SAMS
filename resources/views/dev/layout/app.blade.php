@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>@yield('title') - SAMS for Administrator</title>
+        <title>@yield('title') - SAMS for Developer</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="{{env('APP_URL')}}/assets/startmin/css/bootstrap.min.css" rel="stylesheet">
@@ -120,7 +120,7 @@
                             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="{{env('APP_URL')}}/admin/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            <li><a href="{{env('APP_URL')}}/dev/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                             </li>
                         </ul>
                     </li>
