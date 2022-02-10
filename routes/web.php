@@ -22,6 +22,3 @@ Route::get('/admin', 'App\Http\Controllers\admin\AdminController@index');
 // admin login/logout process
 Route::post('/admin', 'App\Http\Controllers\admin\AdminController@login');
 Route::get('/admin/logout', 'App\Http\Controllers\admin\AdminController@logout');
-
-// admin dashboard
-Route::get('/admin/logout', 'App\Http\Controllers\admin\AdminController@index');
