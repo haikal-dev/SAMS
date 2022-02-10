@@ -17,3 +17,4 @@ Route::get('/', 'App\Http\Controllers\HomeController@index');
 
 Route::get('/lecturer', 'App\Http\Controllers\lecturer\LecturerController@index');
 Route::get('/student', 'App\Http\Controllers\student\StudentController@index');
+Route::get('/admin', 'App\Http\Controllers\admin\AdminController@index');
