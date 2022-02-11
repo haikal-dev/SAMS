@@ -145,7 +145,7 @@
                                 <a href="{{$config->homeUrl}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             <li>
-                                <a href="{{$config->homeUrl}}/lecturerq"><i class="fa fa-user fa-fw"></i> Lecturer</a>
+                                <a href="{{$config->homeUrl}}/lecturer"><i class="fa fa-user fa-fw"></i> Lecturer</a>
                             </li>
                             <!--<li>
                                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
