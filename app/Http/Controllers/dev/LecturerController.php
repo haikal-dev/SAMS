@@ -15,7 +15,7 @@ class LecturerController extends Controller
             return redirect($config->homeUrl);
         }
         else {
-            return "lecturer section";
+            return view('dev.lecturer.dashboard', compact('config'));
         }
     }
 }
