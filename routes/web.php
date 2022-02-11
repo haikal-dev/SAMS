@@ -19,6 +19,9 @@ Route::get('/lecturer', 'App\Http\Controllers\lecturer\LecturerController@index'
 Route::get('/student', 'App\Http\Controllers\student\StudentController@index');
 Route::get('/dev', 'App\Http\Controllers\dev\DevController@index');
 
-// admin login/logout process
+// developer login/logout process
 Route::post('/dev', 'App\Http\Controllers\dev\DevController@login');
 Route::get('/dev/logout', 'App\Http\Controllers\dev\DevController@logout');
+
+// developer management
+Route::get('/dev/lecturer', 'App\Http\Controllers\dev\LecturerController@index');
