@@ -9,11 +9,33 @@ This source code is under development. No release yet.
 
 On Git Terminal,
 
+Clone this repo
+
 ```
 git clone https://github.com/haikal-dev/SAMS.git SAMS
+```
+
+change directory to SAMS
+
+```
 cd SAMS/
+```
+
+copy .env.example and renamed it to .env
+
+```
 copy .env.example .env
+```
+
+Update vendors by composer
+
+```
 composer update
+```
+
+Generate new key
+
+```
 php artisan key:generate
 ```
 
