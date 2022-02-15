@@ -36,6 +36,12 @@
                                                         <input type="text" name="staff_id" id="" class="form-control" placeholder="Enter Staff ID" />
                                                     </div>
                                                     <div class="form-group">
+                                                        <input type="number" name="phone" id="" class="form-control" placeholder="Enter Phone no." />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="email" name="email" id="" class="form-control" placeholder="Enter E-mail" />
+                                                    </div>
+                                                    <div class="form-group">
                                                         <input type="password" name="password" id="" class="form-control" placeholder="Enter Password" />
                                                     </div>
                                                     <div class="form-group">
