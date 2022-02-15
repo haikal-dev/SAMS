@@ -10,9 +10,13 @@
                         <div class="col-lg-12">
                             <h1 class="page-header">@yield('title')</h1>
                         </div>
-                        <!-- /.col-lg-12 -->
+                        
                     </div>
-                    <!-- /.row -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="/dev/lecturer/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add New Lecturer</a>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
                             <!-- Modal -->
