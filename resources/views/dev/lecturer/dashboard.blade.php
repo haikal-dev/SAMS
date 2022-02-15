@@ -30,13 +30,16 @@
                                             <div class="modal-body">
                                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                                     <div class="form-group">
-                                                        <input type="text" name="name" id="" placeholder="Enter New Lecturer" />
+                                                        <input type="text" name="name" id="" class="form-control" placeholder="Enter New Lecturer" />
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="text" name="staffId" id="" placeholder="Enter Staff ID" />
+                                                        <input type="text" name="staff_id" id="" class="form-control" placeholder="Enter Staff ID" />
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="text" name="staffId" id="" placeholder="Enter Staff ID" />
+                                                        <input type="password" name="password" id="" class="form-control" placeholder="Enter Password" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="password" name="repassword" id="" class="form-control" placeholder="Retype password again" />
                                                     </div>
                                                 </form>
                                             </div>
