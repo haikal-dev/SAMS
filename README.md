@@ -6,6 +6,7 @@ This source code is under development. No release yet.
 
 - Install [composer](https://getcomposer.org/)
 - Install [Git](https://git-scm.com/)
+- Install [php](https://www.php.net/manual/en/install.php)
 
 On Git Terminal,
 
