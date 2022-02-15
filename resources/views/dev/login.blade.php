@@ -44,7 +44,7 @@
                                 <fieldset>
                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus required />
+                                        <input class="form-control" placeholder="Username" name="username" type="text" autofocus required />
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control" placeholder="Password" name="pass" type="password" required />
@@ -96,7 +96,7 @@
                     dataType: 'json',
                     url: '{{env("APP_URL")}}/dev',
                     data: {
-                        email: f.email.value,
+                        username: f.username.value,
                         pass: f.pass.value,
                         _token: f._token.value
                     },

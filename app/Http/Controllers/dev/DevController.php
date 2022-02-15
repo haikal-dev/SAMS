@@ -35,14 +35,14 @@ class DevController extends Controller
             return redirect($config->homeUrl);
         }
         else {
-            if(!$request->has('email', 'pass')){
+            if(!$request->has('username', 'pass')){
                 return redirect($this->homeUrl);
             }
             else {
-                $email = $request->get('email');
+                $user = $request->get('username');
                 $pwd = $request->get('pass');
                 
-                if($config->email == $email && Hash::check($pwd, $config->pass)){
+                if($config->user == $user && Hash::check($pwd, $config->pass)){
                     $request->session()->put($config->sessionName, time());
                     return response()->json([
                         'message' => 'OK'
