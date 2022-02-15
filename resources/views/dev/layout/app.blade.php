@@ -137,7 +137,7 @@
                                         <button class="btn btn-primary" type="button">
                                             <i class="fa fa-search"></i>
                                         </button>
-                                </span>
+                                    </span>
                                 </div>
                                 <!-- /input-group -->
                             </li>
