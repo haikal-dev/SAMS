@@ -25,3 +25,4 @@ Route::get('/dev/logout', 'App\Http\Controllers\dev\DevController@logout');
 
 // developer management
 Route::get('/dev/lecturer', 'App\Http\Controllers\dev\LecturerController@index');
+Route::post('/dev/lecturer/add', 'App\Http\Controllers\dev\LecturerController@create');

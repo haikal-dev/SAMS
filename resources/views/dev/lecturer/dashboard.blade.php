@@ -16,6 +16,11 @@
                         <div class="col-md-12">
                             <a data-toggle="modal" data-target="#addLecturer" href="#" class="btn btn-primary"><i class="fa fa-plus"></i> Add New Lecturer</a>
                         </div>
+                        <div class="col-md-12">
+                            @if(isset($success))
+                            <div class="alert alert-success">{{$success}}</div>
+                            @endif
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
@@ -95,10 +100,11 @@ function newLecturer(form){
 
     if(form.password.value != form.repassword.value){
         alert("You have entered unmatched password! Please re-check your password field again.");
+        form.btn.disabled = false;
     }
 
     else {
-        
+        form.submit();
     }
 
     return false;
