@@ -23,6 +23,33 @@ class LecturerController extends Controller
             return view('dev.lecturer.dashboard', compact('config', 'lecturers'));
         }
     }
+    
+    public function removeConfirmation(Request $request, $id){
+        $config = new Config();
+        
+        if(!$request->session()->exists($config->sessionName)){
+            return redirect($config->homeUrl);
+        }
+        else {
+            $model = new LecturerModel;
+            $data = $model->getById($id);
+           return view('dev.lecturer.remove', compact('config', 'data'));
+        }
+    }
+    
+    public function removeNow(Request $request, $id){
+        $config = new Config();
+        
+        if(!$request->session()->exists($config->sessionName)){
+            return redirect($config->homeUrl);
+        }
+        else {
+            $model = new LecturerModel;
+            $model->removeById($id);
+            $request->session()->flash('success', 'Successfully deleted!');
+            return redirect('/dev/lecturer');
+        }
+    }
 
     public function create(Request $request){
         $config = new Config();

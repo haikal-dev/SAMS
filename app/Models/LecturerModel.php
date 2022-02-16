@@ -20,6 +20,14 @@ class LecturerModel
         ]);
     }
     
+    public function removeById($id){
+        return DB::table('lecturers')->where('id', $id)->delete();
+    }
+    
+    public function getById($id){
+        return DB::table('lecturers')->where('id', $id)->first();
+    }
+    
     public function isEmailExists($email){
         $response = false;
         
