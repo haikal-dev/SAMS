@@ -26,7 +26,9 @@
                         </div>
                     </div>
                     <div class="row" style="margin-top:10px;">
-                        TEST
+                        <div class="col-md-12">
+                            TABLE LECTURER LIST
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
