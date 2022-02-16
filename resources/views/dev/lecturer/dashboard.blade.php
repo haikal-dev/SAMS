@@ -91,7 +91,15 @@
 <script>
 
 function newLecturer(form){
-    alert(form.btn.value);
+    form.btn.disabled = true;
+
+    if(form.password.value != form.repassword.value){
+        alert("You have entered unmatched password! Please re-check your password field again.");
+    }
+
+    else {
+        
+    }
 
     return false;
 }
