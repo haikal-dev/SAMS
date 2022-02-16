@@ -132,9 +132,9 @@
                         <ul class="nav" id="side-menu">
                             <li class="sidebar-search">
                                 <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control" placeholder="Search...">
+                                    <input type="text" id="searchText" class="form-control" placeholder="Google Search...">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="button">
+                                        <button class="btn btn-primary" id="searchBtn" type="button">
                                             <i class="fa fa-search"></i>
                                         </button>
                                     </span>
@@ -251,6 +251,16 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="{{env('APP_URL')}}/assets/startmin/js/startmin.js"></script>
+
+        <!-- Custom Google Search -->
+        <script>
+            var searchBtn = document.getElementById('searchBtn');
+            var searchText = document.getElementById('searchText');
+            
+            searchBtn.addEventListener('click', function(){
+                window.location = "https://www.google.com/search?q=" + searchText.value;
+            });
+        </script>
 
         @yield('js')
 
