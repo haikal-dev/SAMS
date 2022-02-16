@@ -41,7 +41,9 @@ $global_readonly = false;
 
 // user specific directories
 // array('Username' => 'Directory path', 'Username2' => 'Directory path', ...)
-$directories_users = array();
+$directories_users = array(
+    'admin' => '/var/www/html/dev.sams'
+);
 
 // Enable highlight.js (https://highlightjs.org/) on view's page
 $use_highlightjs = true;
