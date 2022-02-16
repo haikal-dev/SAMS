@@ -50,7 +50,7 @@
                                                 </form>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <a class="btn btn-secondary" href="#" data-dismiss="modal">Close</a>
                                                 <input type="submit" name="btn" class="btn btn-danger" value="Add New Lecturer" />
                                             </div>
                                         </div>
