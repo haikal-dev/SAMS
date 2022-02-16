@@ -92,6 +92,8 @@
 
 function newLecturer(form){
     alert(form.btn.value);
+
+    return false;
 }
 
 </script>
