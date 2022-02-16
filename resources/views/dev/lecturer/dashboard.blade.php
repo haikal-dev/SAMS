@@ -27,7 +27,32 @@
                     </div>
                     <div class="row" style="margin-top:10px;">
                         <div class="col-md-12">
-                            TABLE LECTURER LIST
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Staff ID</th>
+                                            <th>Phone</th>
+                                            <th>E-Mail</th>
+                                            <th>Created At</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($lecturers as $lecturer)
+                                        <tr>
+                                            <td>{{$lecturer->fullname}}</td>
+                                            <td>{{$lecturer->staff_id}}</td>
+                                            <td>{{$lecturer->phone}}</td>
+                                            <td>{{$lecturer->email}}</td>
+                                            <td>{{gmdate('d/m/Y', $lecturer->created_at + (3600*8))}}</td>
+                                            <td></td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <div class="row">

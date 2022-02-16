@@ -17,7 +17,10 @@ class LecturerController extends Controller
             return redirect($config->homeUrl);
         }
         else {
-            return view('dev.lecturer.dashboard', compact('config'));
+            $model = new LecturerModel;
+            $lecturers = $model->allSortByIdDesc();
+            
+            return view('dev.lecturer.dashboard', compact('config', 'lecturers'));
         }
     }
 

@@ -31,4 +31,8 @@ class LecturerModel
         
         return $response;
     }
+    
+    public function allSortByIdDesc(){
+        return DB::table('lecturers')->orderBy('id', 'desc')->get();
+    }
 }
