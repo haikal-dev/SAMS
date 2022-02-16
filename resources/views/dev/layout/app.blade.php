@@ -252,7 +252,6 @@
         <!-- Custom Theme JavaScript -->
         <script src="{{env('APP_URL')}}/assets/startmin/js/startmin.js"></script>
 
-        <!-- Custom JS -->
         @yield('js')
 
     </body>

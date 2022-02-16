@@ -87,6 +87,7 @@
 
 @section('js')
 
+<!-- Custom JS -->
 <script>
 
 function newLecturer(form){
