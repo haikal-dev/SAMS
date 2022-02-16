@@ -27,7 +27,7 @@
                             <!-- Modal -->
                             <div class="modal fade" id="addLecturer" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
-                                    <form onsubmit="return newLecturer(this);">
+                                    <form method="post" action="/dev/lecturer/add" onsubmit="return newLecturer(this);">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title">New Lecturer</h5>
