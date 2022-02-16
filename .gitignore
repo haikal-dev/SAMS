@@ -15,3 +15,4 @@ yarn-error.log
 /.vscode
 myvendors
 composer.lock
+public/fm.php
