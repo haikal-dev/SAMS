@@ -30,22 +30,22 @@
                                             <div class="modal-body">
                                                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                                                     <div class="form-group">
-                                                        <input type="text" name="name" id="" class="form-control" placeholder="Enter New Lecturer Name" />
+                                                        <input type="text" name="name" id="" class="form-control" placeholder="Enter New Lecturer Name" required />
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="text" name="staff_id" id="" class="form-control" placeholder="Enter Staff ID" />
+                                                        <input type="text" name="staff_id" id="" class="form-control" placeholder="Enter Staff ID" required />
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="number" name="phone" id="" class="form-control" placeholder="Enter Phone no." />
+                                                        <input type="number" name="phone" id="" class="form-control" placeholder="Enter Phone no." required />
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="email" name="email" id="" class="form-control" placeholder="Enter E-mail" />
+                                                        <input type="email" name="email" id="" class="form-control" placeholder="Enter E-mail" required />
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="password" name="password" id="" class="form-control" placeholder="Enter Password" />
+                                                        <input type="password" name="password" id="" class="form-control" placeholder="Enter Password" required />
                                                     </div>
                                                     <div class="form-group">
-                                                        <input type="password" name="repassword" id="" class="form-control" placeholder="Retype password again" />
+                                                        <input type="password" name="repassword" id="" class="form-control" placeholder="Retype password again" required />
                                                     </div>
                                                 </form>
                                             </div>
