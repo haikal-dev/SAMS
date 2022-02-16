@@ -16,6 +16,9 @@
                         <div class="col-md-12">
                             <a data-toggle="modal" data-target="#addLecturer" href="#" class="btn btn-primary"><i class="fa fa-plus"></i> Add New Lecturer</a>
                         </div>
+
+                        <hr />
+
                         <div class="col-md-12">
                             @if(Session::has('success'))
                             <div class="alert alert-success">{{Session::get('success')}}</div>
