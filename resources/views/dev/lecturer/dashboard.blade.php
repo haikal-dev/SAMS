@@ -22,8 +22,13 @@
                         <div class="col-md-12">
                             @if(Session::has('success'))
                             <div class="alert alert-success">{{Session::get('success')}}</div>
+                            @elseif(Session::has('error'))
+                            <div class="alert alert-danger">{{Session::get('error')}}</div>
                             @endif
                         </div>
+                    </div>
+                    <div class="row" style="margin-top:10px;">
+                        TEST
                     </div>
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
