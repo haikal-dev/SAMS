@@ -51,7 +51,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <input type="submit" class="btn btn-danger" value="Add New Lecturer" />
+                                                <input type="submit" name="btn" class="btn btn-danger" value="Add New Lecturer" />
                                             </div>
                                         </div>
                                     </form>
@@ -83,7 +83,16 @@
             </div>
             <!-- /#page-wrapper -->
 
-        
+@stop
 
+@section('js')
+
+<script>
+
+function newLecturer(form){
+    alert(form.btn.value);
+}
+
+</script>
 
 @stop
