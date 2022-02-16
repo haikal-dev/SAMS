@@ -28,7 +28,8 @@ class LecturerController extends Controller
         }
         else {
             if($request->has('name', 'staff_id', 'phone', 'email', 'password')){
-                return redirect('/dev/lecturer')->with('success', 'Received data!');
+                $request->session()->flash('success', 'Successfully received!');
+                return redirect('/dev/lecturer');
             }
         }
     }

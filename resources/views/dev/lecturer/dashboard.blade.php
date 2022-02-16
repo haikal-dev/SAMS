@@ -17,8 +17,8 @@
                             <a data-toggle="modal" data-target="#addLecturer" href="#" class="btn btn-primary"><i class="fa fa-plus"></i> Add New Lecturer</a>
                         </div>
                         <div class="col-md-12">
-                            @if(isset($success))
-                            <div class="alert alert-success">{{$success}}</div>
+                            @if(Session::has('success'))
+                            <div class="alert alert-success">{{Session::get('success')}}</div>
                             @endif
                         </div>
                     </div>
