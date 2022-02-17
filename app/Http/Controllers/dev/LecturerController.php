@@ -48,7 +48,10 @@ class LecturerController extends Controller
 
             if($request->has('password')){
                 $model = new LecturerModel;
-                $data = $model->resetPassword($id, $request->get('password'));
+                $data = $model->resetPassword(
+                    $id,
+                    Hash::make($request->get('password'))
+                );
                 
                 $request->session()->flash('success', 'Successfully reset!');
                 return redirect('/dev/lecturer');
