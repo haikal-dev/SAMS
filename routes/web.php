@@ -28,3 +28,5 @@ Route::get('/dev/lecturer', 'App\Http\Controllers\dev\LecturerController@index')
 Route::post('/dev/lecturer/add', 'App\Http\Controllers\dev\LecturerController@create');
 Route::get('/dev/lecturer/remove/{id}', 'App\Http\Controllers\dev\LecturerController@removeConfirmation');
 Route::post('/dev/lecturer/remove/{id}', 'App\Http\Controllers\dev\LecturerController@removeNow');
+Route::get('/dev/lecturer/reset-password/{id}', 'App\Http\Controllers\dev\LecturerController@resetPasswordView');
+Route::post('/dev/lecturer/reset-password/{id}', 'App\Http\Controllers\dev\LecturerController@resetPassword');

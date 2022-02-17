@@ -36,6 +36,7 @@
                                             <th>Phone</th>
                                             <th>E-Mail</th>
                                             <th>Created At</th>
+                                            <th>Last Updated</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -47,6 +48,7 @@
                                             <td>{{$lecturer->phone}}</td>
                                             <td>{{$lecturer->email}}</td>
                                             <td>{{gmdate('d/m/Y', $lecturer->created_at + (3600*8))}}</td>
+                                            <td>{{gmdate('d/m/Y', $lecturer->updated_at + (3600*8))}}</td>
                                             <td>
                                                 <a href="/dev/lecturer/view/{{$lecturer->id}}" class="btn btn-primary" title="View"><i class="fa fa-eye"></i></a> 
                                                 <a href="/dev/lecturer/reset-password/{{$lecturer->id}}" class="btn btn-info" title="Reset Password"><i class="fa fa-refresh"></i></a> 

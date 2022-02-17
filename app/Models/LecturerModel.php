@@ -19,6 +19,13 @@ class LecturerModel
             'updated_at' => time()
         ]);
     }
+
+    public function resetPassword($id, $password){
+        return DB::table('lecturers')->where('id', $id)->update([
+            'password' => $password,
+            'updated_at' => time()
+        ]);
+    }
     
     public function removeById($id){
         return DB::table('lecturers')->where('id', $id)->delete();

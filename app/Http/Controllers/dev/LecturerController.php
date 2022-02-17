@@ -23,6 +23,38 @@ class LecturerController extends Controller
             return view('dev.lecturer.dashboard', compact('config', 'lecturers'));
         }
     }
+
+    public function resetPasswordView(Request $request, $id){
+        $config = new Config();
+        
+        if(!$request->session()->exists($config->sessionName)){
+            return redirect($config->homeUrl);
+        }
+        else {
+            $model = new LecturerModel;
+            $data = $model->getById($id);
+            
+            return view('dev.lecturer.reset_password', compact('config', 'data'));
+        }
+    }
+
+    public function resetPassword(Request $request, $id){
+        $config = new Config();
+        
+        if(!$request->session()->exists($config->sessionName)){
+            return redirect($config->homeUrl);
+        }
+        else {
+
+            if($request->has('password')){
+                $model = new LecturerModel;
+                $data = $model->resetPassword($id, $request->get('password'));
+                
+                $request->session()->flash('success', 'Successfully reset!');
+                return redirect('/dev/lecturer');
+            }
+        }
+    }
     
     public function removeConfirmation(Request $request, $id){
         $config = new Config();
