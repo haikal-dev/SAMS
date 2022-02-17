@@ -24,6 +24,20 @@ class LecturerController extends Controller
         }
     }
 
+    public function viewLecturer(Request $request, $id){
+        $config = new Config();
+        
+        if(!$request->session()->exists($config->sessionName)){
+            return redirect($config->homeUrl);
+        }
+        else {
+            $model = new LecturerModel;
+            $data = $model->getById($id);
+            
+            return view('dev.lecturer.view_detail', compact('config', 'data'));
+        }
+    }
+
     public function resetPasswordView(Request $request, $id){
         $config = new Config();
         

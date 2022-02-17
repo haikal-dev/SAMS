@@ -30,3 +30,4 @@ Route::get('/dev/lecturer/remove/{id}', 'App\Http\Controllers\dev\LecturerContro
 Route::post('/dev/lecturer/remove/{id}', 'App\Http\Controllers\dev\LecturerController@removeNow');
 Route::get('/dev/lecturer/reset-password/{id}', 'App\Http\Controllers\dev\LecturerController@resetPasswordView');
 Route::post('/dev/lecturer/reset-password/{id}', 'App\Http\Controllers\dev\LecturerController@resetPassword');
+Route::get('/dev/lecturer/view/{id}', 'App\Http\Controllers\dev\LecturerController@viewLecturer');

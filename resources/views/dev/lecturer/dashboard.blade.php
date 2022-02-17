@@ -43,7 +43,7 @@
                                     <tbody>
                                         @foreach($lecturers as $lecturer)
                                         <tr>
-                                            <td>{{$lecturer->fullname}}</td>
+                                            <td>{{strtoupper($lecturer->fullname)}}</td>
                                             <td>{{$lecturer->staff_id}}</td>
                                             <td>{{$lecturer->phone}}</td>
                                             <td>{{$lecturer->email}}</td>
