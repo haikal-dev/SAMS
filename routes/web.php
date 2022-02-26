@@ -32,6 +32,13 @@ Route::controller(DevController::class)->group(function(){
     });
 });
 
+Route::controller(Lecturer::class)->group(function(){
+    Route::prefix('/lecturer')->group(function(){
+        Route::get('', 'index');
+        Route::post('', 'login');
+    });
+});
+
 // Lecturer for Developer
 Route::controller(devLecturer::class)->group(function(){
     Route::prefix('/dev/lecturer')->group(function(){
