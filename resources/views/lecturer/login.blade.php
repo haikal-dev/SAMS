@@ -111,7 +111,7 @@
                             $('#message').html('Logged In!');
                             $('#message').removeClass();
                             $('#message').addClass('alert alert-success');
-                            window.location = "{{env('APP_URL')}}/dev";
+                            window.location = "{{env('APP_URL')}}/lecturer";
                         }
                     }
                 });
