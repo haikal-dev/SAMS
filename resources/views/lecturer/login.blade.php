@@ -96,8 +96,8 @@
                     dataType: 'json',
                     url: '{{env("APP_URL")}}/lecturer',
                     data: {
-                        username: f.email.value,
-                        pass: f.pass.value,
+                        email: f.email.value,
+                        password: f.pass.value,
                         _token: f._token.value
                     },
                     success: function(data){
