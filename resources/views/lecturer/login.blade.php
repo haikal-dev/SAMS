@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>SAMS for Lecturer - Login</title>
+        <title>SAMS for Developer - Login</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="{{env('APP_URL')}}/assets/startmin/css/bootstrap.min.css" rel="stylesheet">
@@ -39,24 +39,18 @@
                             <h3 class="panel-title">Please Sign In</h3>
                         </div>
                         <div class="panel-body">
-                            <form role="form">
+                            <div id="message" style="display:none;" align="center"></div>
+                            <form id="form" role="form" onsubmit="return logIn(this);">
                                 <fieldset>
+                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                        <input class="form-control" placeholder="Username" name="username" type="text" autofocus required />
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Password" name="password" type="password" value="">
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                        </label>
+                                        <input class="form-control" placeholder="Password" name="pass" type="password" required />
                                     </div>
                                     <!-- Change this to a button or input when using this as a form -->
-                                    <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>
-                                    <div style="margin-top: 20px; text-align:center;">
-                                        <a href="{{env('APP_URL')}}">&larr; Back to Home</a>
-                                    </div>
+                                    <input type="submit" value="Login" class="btn btn-success btn-block" />
                                 </fieldset>
                             </form>
                         </div>
@@ -76,6 +70,55 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="{{env('APP_URL')}}/assets/startmin/js/startmin.js"></script>
+
+        <script>
+            @if($statusLoggedOut)
+
+            $('#message').removeClass();
+            $('#message').html('Successfully logged out!');
+            $('#message').addClass('alert alert-success');
+            $('#message').slideDown();
+            setTimeout(function(){
+                $('#message').slideUp();
+            }, 2000);
+            
+            @endif
+
+            function logIn(f){
+                $('#message').removeClass();
+                $('#message').html('Logging In...');
+                $('#message').addClass('alert alert-info');
+                $('#message').slideDown();
+                $('#form').slideUp();
+
+                $.ajax({
+                    type: 'post',
+                    dataType: 'json',
+                    url: '{{env("APP_URL")}}/dev',
+                    data: {
+                        username: f.username.value,
+                        pass: f.pass.value,
+                        _token: f._token.value
+                    },
+                    success: function(data){
+                        if(data.message != 'OK'){
+                            f.reset();
+                            $('#message').html(data.message);
+                            $('#message').removeClass();
+                            $('#message').addClass('alert alert-danger');
+                            $('#form').slideDown();
+                        } else {
+                            $('#message').html('Logged In!');
+                            $('#message').removeClass();
+                            $('#message').addClass('alert alert-success');
+                            window.location = "{{env('APP_URL')}}/dev";
+                        }
+                    }
+                });
+
+                return false;
+            }
+        </script>
 
     </body>
 </html>
