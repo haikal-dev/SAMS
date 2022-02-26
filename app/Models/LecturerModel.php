@@ -20,6 +20,10 @@ class LecturerModel
         ]);
     }
 
+    public function getUserByEmail($email){
+        return DB::table('lecturers')->where('email', $email)->first();
+    }
+
     public function resetPassword($id, $password){
         return DB::table('lecturers')->where('id', $id)->update([
             'password' => $password,
