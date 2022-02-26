@@ -27,6 +27,21 @@ class LecturerController extends Controller
         
     }
 
+    public function settings(Request $request){
+        $config = new Config;
+
+        if(!$request->session()->has($config->sessionName)){
+            return redirect($config->homeUrl);
+        }
+
+        else {
+            $lecturer = new LecturerModel;
+            $config->getUser($request->session()->get($config->sessionName));
+
+            return view('lecturer.settings', compact('config'));
+        }
+    }
+
     public function student_dashboard(Request $request){
         $config = new Config;
 

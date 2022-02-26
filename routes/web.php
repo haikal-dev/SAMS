@@ -37,6 +37,7 @@ Route::controller(Lecturer::class)->group(function(){
         Route::get('', 'index');
         Route::post('', 'login');
         Route::get('logout', 'logout');
+        Route::get('settings', 'settings');
     });
 
     Route::prefix('/lecturer/student')->group(function(){
