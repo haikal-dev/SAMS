@@ -20,7 +20,6 @@ use App\Http\Controllers\dev\LecturerController as devLecturer;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/lecturer', [Lecturer::class, 'index']);
 Route::get('/student', [Student::class, 'index']);
 
 // DevController
@@ -36,6 +35,7 @@ Route::controller(Lecturer::class)->group(function(){
     Route::prefix('/lecturer')->group(function(){
         Route::get('', 'index');
         Route::post('', 'login');
+        Route::get('logout', 'logout');
     });
 });
 
