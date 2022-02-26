@@ -19,7 +19,10 @@ class LecturerController extends Controller
         }
 
         else {
-            return "lecturer dashboard";
+            $lecturer = new LecturerModel;
+            $config->getUser($request->session()->get($config->sessionName));
+
+            return view('lecturer.dashboard', compact('config'));
         }
         
     }
