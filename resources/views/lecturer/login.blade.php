@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>SAMS for Developer - Login</title>
+        <title>SAMS for Lecturer - Login</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="{{env('APP_URL')}}/assets/startmin/css/bootstrap.min.css" rel="stylesheet">
@@ -94,7 +94,7 @@
                 $.ajax({
                     type: 'post',
                     dataType: 'json',
-                    url: '{{env("APP_URL")}}/dev',
+                    url: '{{env("APP_URL")}}/lecturer',
                     data: {
                         username: f.username.value,
                         pass: f.pass.value,
