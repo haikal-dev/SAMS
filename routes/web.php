@@ -38,6 +38,10 @@ Route::controller(Lecturer::class)->group(function(){
         Route::post('', 'login');
         Route::get('logout', 'logout');
     });
+
+    Route::prefix('/lecturer/student')->group(function(){
+        Route::get('', 'student_dashboard');
+    });
 });
 
 // Lecturer for Developer
