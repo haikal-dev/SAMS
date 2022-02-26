@@ -4,8 +4,7 @@
 
 @section('content')
 
-            <div id="page-wrapper">
-                <div class="container-fluid">
+            
                     <div class="row">
                         <div class="col-lg-12">
                             <h1 class="page-header">@yield('title')</h1>
@@ -13,34 +12,23 @@
                         <!-- /.col-lg-12 -->
                     </div>
                     <!-- /.row -->
+
                     <div class="row">
-                        <div class="col-lg-4">
-                            <!-- Modal -->
-                            <div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Confirmation</h5>
-                                        </div>
-                                        <div class="modal-body">
-                                            Are you sure want to log out?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-danger" onclick="window.location='/lecturer/logout';">Confirm</button>
-                                        </div>
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fa fa-bar-chart-o fa-fw"></i> Settings
+                                </div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body">
+                                    <div class="list-group">
+                                        <a href="{{env('APP_URL')}}/settings/change-password" class="list-group-item">Change Password</a>
                                     </div>
                                 </div>
+                                <!-- /.panel-body -->
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- /.container-fluid -->
-            </div>
-            <!-- /#page-wrapper -->
-
-        
-
 
 @stop
 
