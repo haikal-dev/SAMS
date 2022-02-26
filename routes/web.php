@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\lecturer\LecturerController as Lecturer;
+use App\Http\Controllers\student\StudentController as Student;
+use App\Http\Controllers\dev\DevController;
+use App\Http\Controllers\dev\LecturerController as devLecturer;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,21 +18,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\HomeController@index');
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/lecturer', 'App\Http\Controllers\lecturer\LecturerController@index');
-Route::get('/student', 'App\Http\Controllers\student\StudentController@index');
-Route::get('/dev', 'App\Http\Controllers\dev\DevController@index');
+Route::get('/lecturer', [Lecturer::class, 'index']);
+Route::get('/student', [Student::class, 'index']);
 
-// developer login/logout process
-Route::post('/dev', 'App\Http\Controllers\dev\DevController@login');
-Route::get('/dev/logout', 'App\Http\Controllers\dev\DevController@logout');
+// DevController
+Route::controller(DevController::class)->group(function(){
+    Route::prefix('/dev')->group(function(){
+        Route::get('', 'index');
+        Route::post('', 'login');
+        Route::get('logout', 'logout');
+    });
+});
 
-// developer management
-Route::get('/dev/lecturer', 'App\Http\Controllers\dev\LecturerController@index');
-Route::post('/dev/lecturer/add', 'App\Http\Controllers\dev\LecturerController@create');
-Route::get('/dev/lecturer/remove/{id}', 'App\Http\Controllers\dev\LecturerController@removeConfirmation');
-Route::post('/dev/lecturer/remove/{id}', 'App\Http\Controllers\dev\LecturerController@removeNow');
-Route::get('/dev/lecturer/reset-password/{id}', 'App\Http\Controllers\dev\LecturerController@resetPasswordView');
-Route::post('/dev/lecturer/reset-password/{id}', 'App\Http\Controllers\dev\LecturerController@resetPassword');
-Route::get('/dev/lecturer/view/{id}', 'App\Http\Controllers\dev\LecturerController@viewLecturer');
+// Lecturer for Developer
+Route::controller(devLecturer::class)->group(function(){
+    Route::prefix('/dev/lecturer')->group(function(){
+        Route::get('', 'index');
+        Route::post('add', 'create');
+        Route::get('remove/{id}', 'removeConfirmation');
+        Route::post('remove/{id}', 'removeNow');
+        Route::get('reset-password/{id}', 'resetPasswordView');
+        Route::post('reset-password/{id}', 'resetPassword');
+        Route::get('view/{id}', 'viewLecturer');
+    });
+});
