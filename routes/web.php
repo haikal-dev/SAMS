@@ -31,6 +31,7 @@ Route::controller(DevController::class)->group(function(){
     });
 });
 
+// SAMS for Lecturer
 Route::controller(Lecturer::class)->group(function(){
     Route::prefix('/lecturer')->group(function(){
         Route::get('', 'index');
