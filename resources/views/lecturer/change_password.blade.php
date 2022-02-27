@@ -22,6 +22,7 @@
                                 <!-- /.panel-heading -->
                                 <div class="panel-body">
                                     <form action="{{$config->homeUrl}}/settings/change-password" method="post">
+                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
                                         <div class="form-group">
                                             <label for="">Current Password</label>
                                             <input type="password" class="form-control" name="cur_password" placeholder="Current Password" required />
