@@ -39,6 +39,7 @@ Route::controller(Lecturer::class)->group(function(){
         Route::get('logout', 'logout');
         Route::get('settings', 'settings');
         Route::get('settings/change-password', 'changePassword');
+        Route::post('settings/change-password', 'changePasswordNow');
     });
 
     Route::prefix('/lecturer/student')->group(function(){
