@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\dev\Config;
+use App\Models\LecturerModel;
 
 class DevController extends Controller
 {
@@ -17,6 +18,9 @@ class DevController extends Controller
             return view('dev.login', compact('statusLoggedOut'));
         }
         else {
+            $lecturer = new LecturerModel;
+            $config->lecturer_total = $lecturer->total();
+
             return view('dev.dashboard', compact('config'));
         }
     }

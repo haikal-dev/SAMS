@@ -50,6 +50,10 @@ class LecturerModel
         
         return $response;
     }
+
+    public function total(){
+        return count(DB::table('lecturers')->get());
+    }
     
     public function allSortByIdDesc(){
         return DB::table('lecturers')->orderBy('id', 'desc')->get();
