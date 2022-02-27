@@ -27,6 +27,30 @@ class LecturerController extends Controller
         
     }
 
+    public function changePasswordNow(Request $request){
+        $config = new Config;
+
+        if(!$request->session()->has($config->sessionName)){
+            return redirect($config->homeUrl);
+        }
+
+        else {
+            if(!$request->has('cur_password', 'new_password', 'renew_password')){
+                $request->session()->flush('error', 'Invalid request');
+                return redirect($config->homeUrl . "/settings/change-password");
+            }
+
+            else {
+                $cur_password = $request->get('cur_password');
+                $new_password = $request->get('new_password');
+                $renew_password = $request->get('renew_password');
+
+                $request->session()->flush('success', 'Successfully changed.');
+                return redirect($config->homeUrl . "/settings/change-password");
+            }
+        }
+    }
+
     public function settings(Request $request){
         $config = new Config;
 
