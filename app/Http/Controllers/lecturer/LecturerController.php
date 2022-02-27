@@ -27,6 +27,21 @@ class LecturerController extends Controller
         
     }
 
+    public function changePassword(Request $request){
+        $config = new Config;
+
+        if(!$request->session()->has($config->sessionName)){
+            return redirect($config->homeUrl);
+        }
+
+        else {
+            $lecturer = new LecturerModel;
+            $config->getUser($request->session()->get($config->sessionName));
+
+            return view('lecturer.change_password', compact('config'));
+        }
+    }
+
     public function settings(Request $request){
         $config = new Config;
 
