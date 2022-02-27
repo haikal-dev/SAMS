@@ -22,7 +22,7 @@
                                 <!-- /.panel-heading -->
                                 <div class="panel-body">
                                     <div class="list-group">
-                                        <a href="{{env('APP_URL')}}/settings/change-password" class="list-group-item">Change Password</a>
+                                        <a href="{{$config->homeUrl}}/settings/change-password" class="list-group-item">Change Password</a>
                                     </div>
                                 </div>
                                 <!-- /.panel-body -->
