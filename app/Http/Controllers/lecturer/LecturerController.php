@@ -60,7 +60,24 @@ class LecturerController extends Controller
                 $new_password = $request->get('new_password');
                 $renew_password = $request->get('renew_password');
 
-                $request->session()->flash('success', 'Successfully changed.');
+                $lecturer = new LecturerModel;
+                $user = $lecturer->getUserByEmail($request->session()->get($config->sessionName));
+                
+                if($new_password != $renew_password){
+                    $request->session()->flash('error', 'New password does not match with retype password!');
+                }
+
+                else {
+                    if(!Hash::check($cur_password, $user->password)){
+                        $request->session()->flash('error', 'You entered wrong password! Please enter current password properly.');
+                    }
+
+                    else {
+                        $lecturer->resetPassword($user->id, Hash::make($new_password));
+                        $request->session()->flash('success', 'Password successfully changed.');
+                    }
+                }
+                
                 return redirect($config->homeUrl . "/settings/change-password");
             }
         }
