@@ -21,7 +21,13 @@
                                 </div>
                                 <!-- /.panel-heading -->
                                 <div class="panel-body">
+                                    @if(Session::has('error'))
+                                    <div class="alert alert-danger">{{Session::get('error')}}</div>
+                                    @elseif(Session::has('success'))
+                                    <div class="alert alert-success">{{Session::get('success')}}</div>
+                                    @endif
                                     <form action="{{$config->homeUrl}}/settings/change-password" method="post">
+                                        <input type="hidden" name="_token" value="{{csrf_token()}}">
                                         <div class="form-group">
                                             <label for="">Current Password</label>
                                             <input type="password" class="form-control" name="cur_password" placeholder="Current Password" required />

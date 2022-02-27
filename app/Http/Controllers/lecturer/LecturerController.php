@@ -51,7 +51,7 @@ class LecturerController extends Controller
 
         else {
             if(!$request->has('cur_password', 'new_password', 'renew_password')){
-                $request->session()->flush('error', 'Invalid request');
+                $request->session()->flash('error', 'Invalid request');
                 return redirect($config->homeUrl . "/settings/change-password");
             }
 
@@ -60,7 +60,7 @@ class LecturerController extends Controller
                 $new_password = $request->get('new_password');
                 $renew_password = $request->get('renew_password');
 
-                $request->session()->flush('success', 'Successfully changed.');
+                $request->session()->flash('success', 'Successfully changed.');
                 return redirect($config->homeUrl . "/settings/change-password");
             }
         }
