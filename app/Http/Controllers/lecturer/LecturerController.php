@@ -27,6 +27,22 @@ class LecturerController extends Controller
         
     }
 
+    public function student_add_form(Request $request){
+        $config = new Config;
+
+        if(!$request->session()->has($config->sessionName)){
+            $statusLoggedOut = ($request->session()->exists('status')) ? true : false;
+            return view('lecturer.login', compact('statusLoggedOut'));
+        }
+
+        else {
+            $lecturer = new LecturerModel;
+            $config->getUser($request->session()->get($config->sessionName));
+
+            return view('lecturer.student_add_form', compact('config'));
+        }
+    }
+
     public function changePassword(Request $request){
         $config = new Config;
 
