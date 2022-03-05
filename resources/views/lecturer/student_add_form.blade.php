@@ -13,7 +13,7 @@
                             <div class="col-lg-6">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <i class="fa fa-bar-chart-o fa-fw"></i> Student Registration Form
+                                        <i class="fa fa-user fa-fw"></i> Student Registration Form
                                     </div>
                                     <div class="panel-body">
                                         @if(Session::has('error'))
