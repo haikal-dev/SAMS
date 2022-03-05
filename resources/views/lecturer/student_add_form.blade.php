@@ -55,7 +55,7 @@
 <script>
 
 function addStudent(form){
-    if(form.new_password.value != form.retype_new_password){
+    if(form.new_password.value != form.retype_new_password.value){
         alert("Password does not match with retype password!");
     }
 
