@@ -13,6 +13,8 @@
                         <!-- /.col-lg-12 -->
                     </div>
                     <div class="row">
+
+                        <!-- Lecturers Count -->
                         <div class="col-lg-3 col-md-6">
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
@@ -21,8 +23,33 @@
                                             <i class="fa fa-user fa-5x"></i>
                                         </div>
                                         <div class="col-xs-9 text-right">
-                                            <div class="huge">{{$config->lecturer_total}}</div>
-                                            <div>New Lecturers</div>
+                                            <div class="huge">{{ $config->lecturer_total }}</div>
+                                            <div>Registered Lecturers</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{$config->homeUrl}}/lecturer">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">View Details</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Student Total Number Display -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-user fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div class="huge">{{ $config->student_total }}</div>
+                                            <div>Registered Students</div>
                                         </div>
                                     </div>
                                 </div>

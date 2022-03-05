@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\dev\Config;
 use App\Models\LecturerModel;
+use App\Models\StudentModel;
 
 class DevController extends Controller
 {
@@ -19,7 +20,9 @@ class DevController extends Controller
         }
         else {
             $lecturer = new LecturerModel;
+            $student = new StudentModel;
             $config->lecturer_total = $lecturer->total();
+            $config->student_total = $student->total();
 
             return view('dev.dashboard', compact('config'));
         }

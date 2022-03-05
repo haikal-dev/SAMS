@@ -30,6 +30,10 @@ class StudentModel
         }
     }
 
+    public function total(){
+        return count(DB::table('students')->get());
+    }
+
     public function isEmailExist($email){
         $data = DB::table('students')->where('email', $email)->first();
 
