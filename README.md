@@ -40,6 +40,12 @@ composer update
 php artisan key:generate
 ```
 
+#### Upload database table using Laravel Migration
+
+```
+php artisan migrate
+```
+
 #### Your server will running on http://localhost:8000 after run this command
 
 ```
