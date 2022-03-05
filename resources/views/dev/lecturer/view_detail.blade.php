@@ -1,11 +1,14 @@
 @extends('dev.layout.app')
 
-@section('title', 'Lecturer')
+@section('title', 'Lecturer Detail')
 
 @section('content')
 
             <div id="page-wrapper">
                 <div class="container-fluid">
+                    <div class="col-lg-12">
+                            <h1 class="page-header">@yield('title')</h1>
+                    </div>
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="panel panel-default">
