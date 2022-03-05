@@ -31,8 +31,7 @@ class LecturerController extends Controller
         $config = new Config;
 
         if(!$request->session()->has($config->sessionName)){
-            $statusLoggedOut = ($request->session()->exists('status')) ? true : false;
-            return view('lecturer.login', compact('statusLoggedOut'));
+            return redirect($config->homeUrl);
         }
 
         else {
