@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Controllers\lecturer\Config;
 use App\Models\LecturerModel;
+use App\Models\StudentModel;
 use Illuminate\Support\Facades\Hash;
 
 class LecturerController extends Controller
@@ -25,6 +26,64 @@ class LecturerController extends Controller
             return view('lecturer.dashboard', compact('config'));
         }
         
+    }
+
+    public function student_add_form(Request $request){
+        $config = new Config;
+
+        if(!$request->session()->has($config->sessionName)){
+            return redirect($config->homeUrl);
+        }
+
+        else {
+            $lecturer = new LecturerModel;
+            $config->getUser($request->session()->get($config->sessionName));
+
+            return view('lecturer.student_add_form', compact('config'));
+        }
+    }
+
+    public function student_insert(Request $request){
+        $config = new Config;
+
+        if(!$request->session()->has($config->sessionName)){
+            return redirect($config->homeUrl);
+        }
+
+        else {
+            if(!$request->has('name', 'id', 'phone', 'email', 'new_password')){
+                $request->session()->flash('error', 'Invalid submission.');
+                return redirect($config->homeUrl . '/student/add');
+            }
+
+            else {
+                $student = new StudentModel;
+                
+                $name = $request->get('name');
+                $id = $request->get('id');
+                $phone = $request->get('phone');
+                $email = $request->get('email');
+                $password = $request->get('new_password');
+
+                $student->register(
+                    $name,
+                    $id,
+                    $email,
+                    $phone,
+                    Hash::make($password)
+                );
+
+                if($student->error){
+                    $request->session()->flash('error', $student->message);
+                }
+
+                else {
+                    $request->session()->flash('success', "Successfully added!");
+                }
+
+                return redirect($config->homeUrl . '/student/add');
+            }
+        }
     }
 
     public function changePassword(Request $request){
@@ -109,7 +168,10 @@ class LecturerController extends Controller
             $lecturer = new LecturerModel;
             $config->getUser($request->session()->get($config->sessionName));
 
-            return view('lecturer.student_list', compact('config'));
+            $student = new StudentModel;
+            $students = $student->all();
+
+            return view('lecturer.student_list', compact('config', 'students'));
         }
     }
 
