@@ -16,7 +16,7 @@
                             @elseif(Session::has('success'))
                             <div class="alert alert-success">{{Session::get('success')}}</div>
                             @endif
-                            <form method="post" action="{{$config->homeUrl}}/student/add" onclick="return addStudent(this);">
+                            <form method="post" action="{{$config->homeUrl}}/student/add" onsubmit="return addStudent(this);">
                                 <input type="hidden" name="_token" value="{{csrf_token()}}" />
                                 <div class="form-group">
                                     <label for="name">Student Name</label>
