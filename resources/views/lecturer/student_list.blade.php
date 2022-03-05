@@ -33,7 +33,7 @@
                                         @foreach($students as $student)
                                         <tr>
                                             <td>{{ $counter }}</td>
-                                            <td>{{ $student->name }}</td>
+                                            <td>{{ $student->fullname }}</td>
                                             <td>{{ $student->student_id }}</td>
                                             <td>{{ $student->email }}</td>
                                             <td>{{ $student->phone }}</td>
