@@ -45,6 +45,7 @@ Route::controller(Lecturer::class)->group(function(){
     Route::prefix('/lecturer/student')->group(function(){
         Route::get('', 'student_dashboard');
         Route::get('add', 'student_add_form');
+        Route::post('add', 'student_insert');
     });
 });
 

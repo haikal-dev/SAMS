@@ -42,6 +42,25 @@ class LecturerController extends Controller
         }
     }
 
+    public function student_insert(Request $request){
+        $config = new Config;
+
+        if(!$request->session()->has($config->sessionName)){
+            return redirect($config->homeUrl);
+        }
+
+        else {
+            if(!$request->has('name', 'id', 'phone', 'email', 'new_password')){
+                $request->session()->flash('error', 'New password does not match with retype password!');
+                return redirect($config->homeUrl . '/student/add');
+            }
+
+            else {
+                //
+            }
+        }
+    }
+
     public function changePassword(Request $request){
         $config = new Config;
 
