@@ -11,6 +11,11 @@
                         </div>
                         <!-- /.col-lg-12 -->
                         <div class="col-lg-12">
+                            @if(Session::has('error'))
+                            <div class="alert alert-danger">{{Session::get('error')}}</div>
+                            @elseif(Session::has('success'))
+                            <div class="alert alert-success">{{Session::get('success')}}</div>
+                            @endif
                             <form method="post" action="{{$config->homeUrl}}/student/add" onclick="return addStudent(this);">
                                 <input type="hidden" name="_token" value="{{csrf_token()}}" />
                                 <div class="form-group">
