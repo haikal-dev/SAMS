@@ -23,7 +23,10 @@ class LecturerController extends Controller
             $lecturer = new LecturerModel;
             $config->getUser($request->session()->get($config->sessionName));
 
-            return view('lecturer.dashboard', compact('config'));
+            $student = new StudentModel;
+            $students = $student->all();
+
+            return view('lecturer.dashboard', compact('config', 'students'));
         }
         
     }

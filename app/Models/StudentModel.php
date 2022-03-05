@@ -41,4 +41,8 @@ class StudentModel
             return true;
         }
     }
+
+    public function all(){
+        return DB::table('students')->get();
+    }
 }

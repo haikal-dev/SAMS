@@ -20,13 +20,30 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Name</th>
+                                            <th>ID</th>
                                             <th>E-mail</th>
                                             <th>Phone</th>
-                                            <th>Class</th>
                                             <th>#</th>
                                         </tr>
                                     </thead>
-                                    <tbody></tbody>
+                                    <tbody>
+                                        @php
+                                            $counter = 1;
+                                        @endphp
+                                        @foreach($students as $student)
+                                        <tr>
+                                            <td>{{ $counter }}</td>
+                                            <td>{{ $student->name }}</td>
+                                            <td>{{ $student->student_id }}</td>
+                                            <td>{{ $student->email }}</td>
+                                            <td>{{ $student->phone }}</td>
+                                            <td><a class="btn btn-primary" href="{{ $config->homeUrl }}/student/view/{{ $student->id }}" title="View Student Details"><i class="fa fa-eye"></i></a></td>
+                                        </tr>
+                                            @php
+                                                $counter++;
+                                            @endphp
+                                        @endforeach
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
