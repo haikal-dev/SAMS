@@ -7,13 +7,22 @@
             <div id="page-wrapper">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-12">
-                            <h1 class="page-header">Detail</h1>
-                            <div>
-                                <strong>Name:</strong> {{strtoupper($data->fullname)}} <br />
-                                <strong>Staff ID:</strong> {{$data->staff_id}} <br />
-                                <strong>E-mail:</strong> {{$data->email}} <br />
-                                <strong>Phone No:</strong> {{$data->phone}}
+                        <div class="col-lg-6">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Lecturer Detail</div>
+                                <div class="panel-body">
+                                    <b>Name:</b> <br />
+                                    {{ strtoupper($data->fullname) }} <br /><br/>
+
+                                    <b>Staff ID:</b> <br />
+                                    {{ $data->staff_id }} <br /><br/>
+
+                                    <b>E-mail:</b> <br />
+                                    {{ $data->email }} <br /><br/>
+
+                                    <b>Phone No:</b> <br />
+                                    {{ $data->phone }}
+                                </div>
                             </div>
                         </div>
                     </div>
