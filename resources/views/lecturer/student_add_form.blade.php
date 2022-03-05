@@ -43,9 +43,30 @@
                                     <input class="form-control" type="password" name="retype_new_password" id="" placeholder="Retype new password again" required />
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" value="Add Student" class="btn btn-primary form-control">
+                                    <input type="submit" value="Add Student" name="btn" class="btn btn-primary form-control">
                                 </div>
                             </form>
                         </div>
                     </div>
+@stop
+
+@section('js')
+
+<script>
+
+function addStudent(form){
+    if(form.new_password.value != form.retype_new_password){
+        alert("Password does not match with retype password!");
+    }
+
+    else {
+        form.btn.disabled = true;
+        form.submit();
+    }
+
+    return false;
+}
+
+</script>
+
 @stop

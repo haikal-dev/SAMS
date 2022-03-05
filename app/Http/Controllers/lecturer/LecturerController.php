@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Controllers\lecturer\Config;
 use App\Models\LecturerModel;
+use App\Models\StudentModel;
 use Illuminate\Support\Facades\Hash;
 
 class LecturerController extends Controller
@@ -51,12 +52,36 @@ class LecturerController extends Controller
 
         else {
             if(!$request->has('name', 'id', 'phone', 'email', 'new_password')){
-                $request->session()->flash('error', 'New password does not match with retype password!');
+                $request->session()->flash('error', 'Invalid submission.');
                 return redirect($config->homeUrl . '/student/add');
             }
 
             else {
-                //
+                $student = new StudentModel;
+                
+                $name = $request->get('name');
+                $id = $request->get('id');
+                $phone = $request->get('phone');
+                $email = $request->get('email');
+                $password = $request->get('new_password');
+
+                $student->register(
+                    $name,
+                    $id,
+                    $email,
+                    $phone,
+                    Hash::make($password)
+                );
+
+                if($student->error){
+                    $request->session()->flash('error', $student->message);
+                }
+
+                else {
+                    $request->session()->flash('success', "Successfully added!");
+                }
+
+                return redirect($config->homeUrl . '/student/add');
             }
         }
     }
