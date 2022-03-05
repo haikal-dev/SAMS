@@ -20,27 +20,27 @@
                                 <input type="hidden" name="_token" value="{{csrf_token()}}" />
                                 <div class="form-group">
                                     <label for="name">Student Name</label>
-                                    <input class="form-control" type="text" name="name" id="" placeholder="Enter student name" required />
+                                    <input class="form-control" type="text" name="name" placeholder="Enter student name" required />
                                 </div>
                                 <div class="form-group">
                                     <label for="student_id">Student ID</label>
-                                    <input class="form-control" type="text" name="id" id="" placeholder="Enter student ID" required />
+                                    <input class="form-control" type="text" name="id" placeholder="Enter student ID" required />
                                 </div>
                                 <div class="form-group">
                                     <label for="student_email">Student Email</label>
-                                    <input class="form-control" type="email" name="email" id="" placeholder="Enter student E-mail" required />
+                                    <input class="form-control" type="email" name="email" placeholder="Enter student E-mail" required />
                                 </div>
                                 <div class="form-group">
                                     <label for="student_phone">Student Phone No</label>
-                                    <input class="form-control" type="number" name="phone" id="" placeholder="Enter student phone no." required />
+                                    <input class="form-control" type="number" name="phone" placeholder="Enter student phone no." required />
                                 </div>
                                 <div class="form-group">
                                     <label for="student_password">New Password</label>
-                                    <input class="form-control" type="password" name="new_password" id="" placeholder="Enter new password" required />
+                                    <input class="form-control" type="password" name="new_password" placeholder="Enter new password" required />
                                 </div>
                                 <div class="form-group">
                                     <label for="student_retype_password">Retype New Password</label>
-                                    <input class="form-control" type="password" name="retype_new_password" id="" placeholder="Retype new password again" required />
+                                    <input class="form-control" type="password" name="retype_new_password" placeholder="Retype new password again" required />
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" value="Add Student" name="btn" class="btn btn-primary form-control">
